@@ -5,7 +5,7 @@ import com.example.vaccinationschedule.FireBaseFunctions.FireBaseFunctions
 import com.example.vaccinationschedule.Navigators.loginNavigator
 import com.example.vaccinationschedule.viewModelHelper
 
-class LoginViewModel(navigator :loginNavigator,context: Context) : viewModelHelper() {
+class LoginViewModel(navigator: loginNavigator, context: Context) : viewModelHelper() {
     var loginEmail: String = ""
     var loginPassword: String = ""
     var navigator = navigator
@@ -25,6 +25,6 @@ class LoginViewModel(navigator :loginNavigator,context: Context) : viewModelHelp
     }
 
     override fun onSuccessSignInUser() {
-
+        navigator.openHomeActivity()
     }
 }

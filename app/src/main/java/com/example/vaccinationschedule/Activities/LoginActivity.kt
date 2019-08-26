@@ -7,11 +7,19 @@ import androidx.databinding.DataBindingUtil
 import com.example.vaccinationschedule.Navigators.loginNavigator
 import com.example.vaccinationschedule.R
 import com.example.vaccinationschedule.databinding.ActivityLoginBinding
+import com.example.vaccinationschedule.recycleView.childAdapter
 import com.example.vaccinationschedule.viewModel.LoginViewModel
 
 class LoginActivity : AppCompatActivity(),loginNavigator {
     lateinit var binding: ActivityLoginBinding
     lateinit var viewModel: LoginViewModel
+
+
+    override fun openHomeActivity() {
+        var int = Intent(this, HomeActivity::class.java)
+        startActivity(int)
+    }
+
     override fun openRegisterActivity() {
         var int = Intent(this, RegisterActivity::class.java)
         startActivity(int)
@@ -22,5 +30,7 @@ class LoginActivity : AppCompatActivity(),loginNavigator {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_login)
         viewModel = LoginViewModel(this, this)
         binding.loginVM = viewModel
+
+
     }
 }
