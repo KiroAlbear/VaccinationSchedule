@@ -3,6 +3,7 @@ package com.example.vaccinationschedule.Activities
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import com.example.vaccinationschedule.Navigators.registerNavigator
 import com.example.vaccinationschedule.R
@@ -10,6 +11,15 @@ import com.example.vaccinationschedule.databinding.ActivityRegisterBinding
 import com.example.vaccinationschedule.viewModel.RegisterViewModel
 
 class RegisterActivity : AppCompatActivity(),registerNavigator {
+    override fun onUserAlreadyExist() {
+        Toast.makeText(this,"user is already exist",Toast.LENGTH_SHORT).show()
+    }
+
+    override fun openHomeActivity() {
+        var int = Intent(this, HomeActivity::class.java)
+        startActivity(int)
+    }
+
     override fun onEmaileCorrect() {
         binding.signInUserEmailEditeText.isErrorEnabled = false
     }
@@ -17,7 +27,7 @@ class RegisterActivity : AppCompatActivity(),registerNavigator {
     override fun onEmaileWrong() {
         binding.signInUserEmailEditeText.setError(getString(R.string.emailErrorMessage))
     }
-///////////////////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////////////
     override fun onPasswordCorrect() {
         binding.signInPasswordEditeText.isErrorEnabled = false
     }
@@ -25,7 +35,7 @@ class RegisterActivity : AppCompatActivity(),registerNavigator {
     override fun onPasswordWrong() {
         binding.signInPasswordEditeText.setError(getString(R.string.emailErrorMessage))
     }
-/////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////
     override fun onNameCorrect() {
         binding.signUpNameEditeText.isErrorEnabled = false
     }
@@ -33,7 +43,7 @@ class RegisterActivity : AppCompatActivity(),registerNavigator {
     override fun onNameWrong() {
         binding.signUpNameEditeText.setError(getString(R.string.emailErrorMessage))
     }
-/////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////
     override fun onPhoneCorrect() {
         binding.phoneEditeText.isErrorEnabled = false
     }
@@ -41,7 +51,7 @@ class RegisterActivity : AppCompatActivity(),registerNavigator {
     override fun onPhoneWrong() {
         binding.phoneEditeText.setError(getString(R.string.emailErrorMessage))
     }
-/////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////
     override fun onStreetCorrect() {
         binding.streetEditeText.isErrorEnabled = false
     }
@@ -49,7 +59,7 @@ class RegisterActivity : AppCompatActivity(),registerNavigator {
     override fun onStreetWrong() {
         binding.streetEditeText.setError(getString(R.string.emailErrorMessage))
     }
-/////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////
     override fun onIDCorrect() {
         binding.idNumberEditeText.isErrorEnabled = false
     }

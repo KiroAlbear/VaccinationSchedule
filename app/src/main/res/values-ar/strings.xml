@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">VaccinationSchedule</string>
+    <string name="googleTranslationVoice">en-us-x-sfg#female_2-local</string>
+    <string name="web_client_id" translatable="false">
+        86568406607-hguj2bhe9vsuhgrohbq05mia0rsfsgpd.apps.googleusercontent.com
+    </string>
+    <string name="welcome_text">مرحبا</string>
+    <string name="loginTextView">تسجيل الدخول</string>
+    <string name="signupTextView">تسجيل</string>
+    <string name="emailText">البريد الالكتروني</string>
+    <string name="passwordText">كلمة السر</string>
+    <string name="nameTexr">الاسم</string>
+    <string name="signInText">تسجيل الدخول</string>
+    <string name="signUpText">تسجيل</string>
+    <string name="signInNoAccountText">ليس لديك حساب ؟</string>
+    <string name="signInRegisterText">تسجيل الدخول</string>
+    <string name="signUpHaveAccountText">هل لديك حساب ؟</string>
+    <string name="signUpRegisterText">تسجيل الدخول</string>
+    <string name="surNameText">اسم العائلة</string>
+    <string name="idNumberText">الرقم القومي</string>
+    <string name="streetText">الشارع</string>
+    <string name="cityText">المدينة</string>
+    <string name="phoneText">الهاتف</string>
+
+
+    <string name="signInOrText">او</string>
+    <string name="signUpAlreadyRegisterd">This email is already Registered</string>
+    <string name="signInGmailText">Sign in with Gmail</string>
+    <string name="passwordErrorMessage">Should contains at least 8 characters and numbers</string>
+
+
+
+
+
+
+</resources>

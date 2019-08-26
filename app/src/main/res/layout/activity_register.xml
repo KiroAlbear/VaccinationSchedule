@@ -17,8 +17,8 @@
             <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/signUpNameEditeText"
                     style="@style/textInputLayoutStyle"
-                    app:layout_constraintRight_toRightOf="@id/registerRightMarginGuideline"
-                    app:layout_constraintLeft_toLeftOf="@id/registerLeftMarginGuideline"
+                    app:layout_constraintEnd_toEndOf="@id/registerRightMarginGuideline"
+                    app:layout_constraintStart_toStartOf="@id/registerLeftMarginGuideline"
                     android:layout_marginTop="8dp"
                     app:layout_constraintTop_toBottomOf="@id/signupTextView">
                 <com.google.android.material.textfield.TextInputEditText
@@ -32,8 +32,8 @@
             <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/signInPasswordEditeText"
                     style="@style/textInputLayoutStyle"
-                    app:layout_constraintRight_toRightOf="@id/registerRightMarginGuideline"
-                    app:layout_constraintLeft_toLeftOf="@id/registerLeftMarginGuideline"
+                    app:layout_constraintEnd_toEndOf="@id/registerRightMarginGuideline"
+                    app:layout_constraintStart_toStartOf="@id/registerLeftMarginGuideline"
                     android:layout_marginTop="8dp"
                     app:layout_constraintTop_toBottomOf="@+id/signInUserEmailEditeText">
 
@@ -50,15 +50,15 @@
             <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/surNameEditeText"
                     style="@style/textInputLayoutStyle"
-                    app:layout_constraintRight_toRightOf="@id/registerRightMarginGuideline"
-                    app:layout_constraintLeft_toLeftOf="@id/registerLeftMarginGuideline"
+                    app:layout_constraintEnd_toEndOf="@id/registerRightMarginGuideline"
+                    app:layout_constraintStart_toStartOf="@id/registerLeftMarginGuideline"
                     android:layout_marginTop="8dp"
                     app:layout_constraintTop_toBottomOf="@+id/signInPasswordEditeText">
 
                 <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/surNameExtendedEditeText"
                         style="@style/extendedEditeTextStyle"
-                        android:hint="Surname"
+                        android:hint="@string/surNameText"
                         android:text="@={registerVm.surname}"
                         android:drawableStart="@drawable/ic_password_register">
                 </com.google.android.material.textfield.TextInputEditText>
@@ -68,8 +68,8 @@
             <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/idNumberEditeText"
                     style="@style/textInputLayoutStyle"
-                    app:layout_constraintRight_toRightOf="@id/registerRightMarginGuideline"
-                    app:layout_constraintLeft_toLeftOf="@id/registerLeftMarginGuideline"
+                    app:layout_constraintEnd_toEndOf="@id/registerRightMarginGuideline"
+                    app:layout_constraintStart_toStartOf="@id/registerLeftMarginGuideline"
                     android:layout_marginTop="8dp"
                     app:layout_constraintTop_toBottomOf="@+id/surNameEditeText">
 
@@ -77,7 +77,7 @@
                         android:id="@+id/idNumberExtendedEditeText"
                         style="@style/extendedEditeTextStyle"
                         android:text="@={registerVm.idNumber}"
-                        android:hint="ID number"
+                        android:hint="@string/idNumberText"
                         android:maxLength="16"
                         android:inputType="number"
                         android:drawableStart="@drawable/ic_password_register">
@@ -87,15 +87,15 @@
             <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/streetEditeText"
                     style="@style/textInputLayoutStyle"
-                    app:layout_constraintRight_toRightOf="@id/registerRightMarginGuideline"
-                    app:layout_constraintLeft_toLeftOf="@id/registerLeftMarginGuideline"
+                    app:layout_constraintEnd_toEndOf="@id/registerRightMarginGuideline"
+                    app:layout_constraintStart_toStartOf="@id/registerLeftMarginGuideline"
                     android:layout_marginTop="8dp"
                     app:layout_constraintTop_toBottomOf="@+id/idNumberEditeText">
 
                 <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/streetExtendedEditeText"
                         style="@style/extendedEditeTextStyle"
-                        android:hint="Street"
+                        android:hint="@string/streetText"
                         android:text="@={registerVm.street}"
                         android:drawableStart="@drawable/ic_street_1">
                 </com.google.android.material.textfield.TextInputEditText>
@@ -104,15 +104,15 @@
             <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/cityEditeText"
                     style="@style/textInputLayoutStyle"
-                    app:layout_constraintRight_toRightOf="@id/registerRightMarginGuideline"
-                    app:layout_constraintLeft_toLeftOf="@id/registerLeftMarginGuideline"
+                    app:layout_constraintEnd_toEndOf="@id/registerRightMarginGuideline"
+                    app:layout_constraintStart_toStartOf="@id/registerLeftMarginGuideline"
                     android:layout_marginTop="8dp"
                     app:layout_constraintTop_toBottomOf="@+id/streetEditeText">
 
                 <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/cityExtendedEditeText"
                         style="@style/extendedEditeTextStyle"
-                        android:hint="City"
+                        android:hint="@string/cityText"
                         android:text="@={registerVm.city}"
                         android:drawableStart="@drawable/ic_location_on_black_24dp">
                 </com.google.android.material.textfield.TextInputEditText>
@@ -121,8 +121,8 @@
             <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/phoneEditeText"
                     style="@style/textInputLayoutStyle"
-                    app:layout_constraintRight_toRightOf="@id/registerRightMarginGuideline"
-                    app:layout_constraintLeft_toLeftOf="@id/registerLeftMarginGuideline"
+                    app:layout_constraintEnd_toEndOf="@id/registerRightMarginGuideline"
+                    app:layout_constraintStart_toStartOf="@id/registerLeftMarginGuideline"
                     android:layout_marginTop="8dp"
 
                     app:layout_constraintTop_toBottomOf="@+id/cityEditeText">
@@ -130,7 +130,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/phoneExtendedEditeText"
                         style="@style/extendedEditeTextStyle"
-                        android:hint="Phone"
+                        android:hint="@string/phoneText"
                         android:inputType="number"
                         android:maxLength="11"
                         android:text="@={registerVm.mobilePhone}"
@@ -141,8 +141,8 @@
             <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/signInUserEmailEditeText"
                     style="@style/textInputLayoutStyle"
-                    app:layout_constraintRight_toRightOf="@id/registerRightMarginGuideline"
-                    app:layout_constraintLeft_toLeftOf="@id/registerLeftMarginGuideline"
+                    app:layout_constraintEnd_toEndOf="@id/registerRightMarginGuideline"
+                    app:layout_constraintStart_toStartOf="@id/registerLeftMarginGuideline"
                     app:layout_constraintTop_toBottomOf="@id/signUpNameEditeText"
                     android:layout_marginTop="8dp">
                 <com.google.android.material.textfield.TextInputEditText
@@ -157,7 +157,6 @@
             <TextView android:id="@+id/signupTextView"
                       style="@style/loginRegisterHeaderStyle"
                       app:layout_constraintTop_toBottomOf="@id/guideLine"
-                      app:layout_constraintLeft_toLeftOf="parent"
                       android:text="@string/signupTextView"
                       app:layout_constraintStart_toStartOf="@+id/registerLeftMarginGuideline"/>
 
@@ -172,10 +171,10 @@
                     style="@style/registerationButtonStyle"
                     app:layout_constraintTop_toBottomOf="@id/registerHaveAccountTextView"
                     android:text="@string/signUpText"
-                    app:layout_constraintStart_toStartOf="@+id/registerLeftMarginGuideline"
+                    app:layout_constraintEnd_toEndOf="@id/registerRightMarginGuideline"
+                    app:layout_constraintStart_toStartOf="@id/registerLeftMarginGuideline"
                     android:layout_marginStart="8dp"
                     android:onClick="@{()->registerVm.onSignUpClick()}"
-                    app:layout_constraintEnd_toStartOf="@+id/registerRightMarginGuideline"
                     android:layout_marginEnd="8dp"/>
 
             <TextView
@@ -197,6 +196,7 @@
                       style="@style/registerationTextView"
                       android:textColor="@color/colorAppTheme"
                       android:layout_marginStart="8dp"
+
                       app:layout_constraintStart_toEndOf="@+id/registerHaveAccountTextView"/>
 
             <androidx.constraintlayout.widget.Guideline

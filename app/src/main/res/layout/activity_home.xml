@@ -12,7 +12,6 @@
     android:layout_height="match_parent">
 
 
-
     <com.cooltechworks.views.shimmer.ShimmerRecyclerView
         android:id="@+id/shimmer_recycler_view"
         android:layout_width="match_parent"
@@ -23,6 +22,7 @@
         app:shimmer_demo_angle="20"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/homeAddButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="8dp" android:layout_marginBottom="8dp"

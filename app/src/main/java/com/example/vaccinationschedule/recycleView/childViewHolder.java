@@ -8,11 +8,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.vaccinationschedule.R;
 
 public class childViewHolder extends RecyclerView.ViewHolder {
-    public TextView name,surname,dataOfBirth;
+    public TextView name,surname,dataOfBirth,letterTextView;
     public childViewHolder(@NonNull View itemView) {
         super(itemView);
-        name=itemView.findViewById(R.id.tvName);
-        surname=itemView.findViewById(R.id.tvSurname);
-        dataOfBirth=itemView.findViewById(R.id.tvData);
+        name=itemView.findViewById(R.id.Name);
+        surname=itemView.findViewById(R.id.Surname);
+        dataOfBirth=itemView.findViewById(R.id.Data);
+        letterTextView= itemView.findViewById(R.id.letterTextView);
     }
 }

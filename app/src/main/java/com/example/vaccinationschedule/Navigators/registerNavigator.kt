@@ -2,6 +2,7 @@ package com.example.vaccinationschedule.Navigators
 
 interface registerNavigator {
     fun openLoginActivity()
+    fun openHomeActivity()
 
     fun onEmaileCorrect()
     fun onEmaileWrong()
@@ -27,5 +28,7 @@ interface registerNavigator {
 
     fun onCityCorrect()
     fun onCityWrong()
+
+    fun onUserAlreadyExist()
 
 }

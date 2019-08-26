@@ -19,6 +19,12 @@
     <string name="signUpRegisterText">SIGN IN</string>
 
     <string name="signInOrText">OR</string>
+    <string name="surNameText">Surname</string>
+    <string name="idNumberText">ID number</string>
+    <string name="streetText">Street</string>
+    <string name="cityText">City</string>
+    <string name="phoneText">Phone</string>
+
     <string name="signUpAlreadyRegisterd">This email is already Registered</string>
     <string name="signInGmailText">Sign in with Gmail</string>
     <string name="passwordErrorMessage">Should contains at least 8 characters and numbers</string>

@@ -70,18 +70,7 @@ class MainActivity : AppCompatActivity(),FireBaseNavigator {
 
 
 
-        RetrofitClient.getInstance().create<userInterface>().addParent("kiro","kiro","kiro",
-            "kiro","kiro","kiro","kiro").enqueue(object :
-            Callback<String> {
-            override fun onFailure(call: Call<String>, t: Throwable) {
 
-            }
-
-            override fun onResponse(call: Call<String>, response: Response<String>) {
-                var asd = response.body()
-            }
-
-        })
 
 
 

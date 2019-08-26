@@ -24,8 +24,8 @@
                 android:id="@+id/signInUserEmailEditeText"
                 style="@style/textInputLayoutStyle"
                 android:hint="@string/emailText"
-                app:layout_constraintLeft_toRightOf="@id/loginLeftMarginGuideline"
-                app:layout_constraintRight_toLeftOf="@id/loginRightMarginGuideline"
+                app:layout_constraintStart_toStartOf="@id/loginLeftMarginGuideline"
+                app:layout_constraintEnd_toStartOf="@id/loginRightMarginGuideline"
                 app:layout_constraintTop_toBottomOf="@id/loginTextView"
                 android:layout_marginTop="8dp">
             <com.google.android.material.textfield.TextInputEditText
@@ -40,8 +40,8 @@
                 android:id="@+id/signInPasswordEditeText"
                 style="@style/textInputLayoutStyle"
                 android:hint="@string/passwordText"
-                app:layout_constraintLeft_toRightOf="@id/loginLeftMarginGuideline"
-                app:layout_constraintRight_toLeftOf="@id/loginRightMarginGuideline"
+                app:layout_constraintStart_toStartOf="@id/loginLeftMarginGuideline"
+                app:layout_constraintEnd_toStartOf="@id/loginRightMarginGuideline"
                 android:layout_marginTop="8dp"
                 app:layout_constraintTop_toBottomOf="@+id/signInUserEmailEditeText">
             <com.google.android.material.textfield.TextInputEditText

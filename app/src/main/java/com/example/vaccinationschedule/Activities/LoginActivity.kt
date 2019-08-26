@@ -3,6 +3,7 @@ package com.example.vaccinationschedule.Activities
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import com.example.vaccinationschedule.Navigators.loginNavigator
 import com.example.vaccinationschedule.R
@@ -12,6 +13,12 @@ import java.util.*
 
 
 class LoginActivity : AppCompatActivity(),loginNavigator {
+    override fun onUserDoesNotExist() {
+        Toast.makeText(this,"user does not exist",Toast.LENGTH_SHORT).show()
+    }
+
+
+
     override fun onEmaileCorrect() {
         binding.signInUserEmailEditeText.isErrorEnabled = false
     }
@@ -47,7 +54,7 @@ class LoginActivity : AppCompatActivity(),loginNavigator {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_login)
         viewModel = LoginViewModel(this, this)
         binding.loginVM = viewModel
-        setLocale("Arabic")
+        //setLocale("ar")
 
     }
 

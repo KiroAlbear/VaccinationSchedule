@@ -3,6 +3,7 @@ package com.example.vaccinationschedule.FireBaseFunctions
 import android.content.Context
 import android.util.Log
 import com.example.powerofwords2.Navigators.FireBaseNavigator
+import com.example.vaccinationschedule.BasicFunctions.globalStrings
 import com.example.vaccinationschedule.Model.ChildEntity
 import com.example.vaccinationschedule.Model.CurrentUserEntity
 import com.google.firebase.auth.FirebaseAuth

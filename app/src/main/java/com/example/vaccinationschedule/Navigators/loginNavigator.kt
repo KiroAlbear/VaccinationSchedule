@@ -10,4 +10,6 @@ interface loginNavigator {
 
     fun onPasswordCorrect()
     fun onPasswordWrong()
+
+    fun onUserDoesNotExist()
 }

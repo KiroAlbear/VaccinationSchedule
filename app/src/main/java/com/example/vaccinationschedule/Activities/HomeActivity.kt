@@ -1,9 +1,12 @@
 package com.example.vaccinationschedule.Activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.SystemClock
 import androidx.databinding.DataBindingUtil
 import com.example.vaccinationschedule.Model.ChildEntity
+import com.example.vaccinationschedule.PopUps.pop
 import com.example.vaccinationschedule.R
 import com.example.vaccinationschedule.databinding.ActivityHomeBinding
 import com.example.vaccinationschedule.recycleView.childAdapter
@@ -22,6 +25,9 @@ class HomeActivity : AppCompatActivity() {
         childList.add(ChildEntity("heba", "albear", "14-9-2019"))
         adapter = childAdapter(this, childList)
         binding.shimmerRecyclerView.adapter = adapter
-
+        binding.homeAddButton.setOnClickListener {
+            startActivity(Intent(this@HomeActivity, pop::class.java))
+        }
     }
+
 }

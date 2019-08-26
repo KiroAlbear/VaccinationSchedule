@@ -2,10 +2,17 @@ package com.example.vaccinationschedule.viewModel
 
 import android.content.Context
 import com.example.vaccinationschedule.BasicFunctions.UserHelper
+import com.example.vaccinationschedule.BasicFunctions.globalStrings
 import com.example.vaccinationschedule.FireBaseFunctions.FireBaseFunctions
 import com.example.vaccinationschedule.Model.ParentEntity
 import com.example.vaccinationschedule.Navigators.registerNavigator
+import com.example.vaccinationschedule.retrofitInterface.RetrofitClient
+import com.example.vaccinationschedule.retrofitInterface.userInterface
 import com.example.vaccinationschedule.viewModelHelper
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.create
 
 class RegisterViewModel(navigator: registerNavigator, context: Context) : viewModelHelper() {
     var name: String = ""
@@ -87,8 +94,8 @@ class RegisterViewModel(navigator: registerNavigator, context: Context) : viewMo
         else
             navigator.onPhoneCorrect()
 
-        if (validatePassword && validateEmail && validateName && validateSurname && validateID && validateStreet && validateCity && validatePhone)
-            firebaseFunctions.signUpUser(emailAddress, password)
+         if (validatePassword && validateEmail && validateName && validateSurname && validateID && validateStreet && validateCity && validatePhone)
+          signUpUser()
     }
 
     fun trimData() {
@@ -108,4 +115,34 @@ class RegisterViewModel(navigator: registerNavigator, context: Context) : viewMo
     override fun onSuccessRegisterUser() {
 
     }
+
+    fun signUpUser() {
+//        name = "kirols"
+//        surname = "albear"
+//        Street = "teraa st"
+//        City = "shoubra"
+//        mobilePhone = "01272911668"
+//        idNumber = "1245567895456545"
+//        password = "kiro123"
+//        emailAddress = "kirolosa45@gmail.com"
+        RetrofitClient.getInstance().create<userInterface>().addParent(
+            name, surname, Street,
+            City, mobilePhone, idNumber, emailAddress, password
+        ).enqueue(object :
+            Callback<String> {
+            override fun onFailure(call: Call<String>, t: Throwable) {
+                navigator.onUserAlreadyExist()
+            }
+
+            override fun onResponse(call: Call<String>, response: Response<String>) {
+                if (response.body() != globalStrings.signupErrorMessage)
+                    navigator.openHomeActivity()
+                else
+                    navigator.onUserAlreadyExist()
+            }
+
+        })
+    }
+
+
 }

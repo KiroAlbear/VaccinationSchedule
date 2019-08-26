@@ -1,4 +1,4 @@
-package com.example.vaccinationschedule.FireBaseFunctions
+package com.example.vaccinationschedule.BasicFunctions
 
 class globalStrings {
     companion object {
@@ -20,6 +20,9 @@ class globalStrings {
         val email_UserName = "UserName"
         val email_DomainName = "DomainName"
         val email_TLD = "TLD"
+
+        val signinErrorMessage = "user does not exist"
+        val signupErrorMessage = "User Exist"
 
     }
 

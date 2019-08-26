@@ -1,7 +1,7 @@
 package com.example.vaccinationschedule.myJSON
 
 import android.os.AsyncTask
-import com.example.vaccinationschedule.FireBaseFunctions.globalStrings
+import com.example.vaccinationschedule.BasicFunctions.globalStrings
 import com.example.vaccinationschedule.Model.CurrentUserEntity
 import org.json.JSONObject
 import java.io.BufferedReader
