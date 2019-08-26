@@ -12,6 +12,22 @@ import java.util.*
 
 
 class LoginActivity : AppCompatActivity(),loginNavigator {
+    override fun onEmaileCorrect() {
+        binding.signInUserEmailEditeText.isErrorEnabled = false
+    }
+
+    override fun onEmaileWrong() {
+        binding.signInUserEmailEditeText.setError(getString(R.string.emailErrorMessage))
+    }
+
+    override fun onPasswordCorrect() {
+        binding.signInPasswordEditeText.isErrorEnabled = false
+    }
+
+    override fun onPasswordWrong() {
+        binding.signInPasswordEditeText.setError(getString(R.string.emailErrorMessage))
+    }
+
     lateinit var binding: ActivityLoginBinding
     lateinit var viewModel: LoginViewModel
 
