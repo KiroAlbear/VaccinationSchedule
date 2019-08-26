@@ -10,6 +10,70 @@ import com.example.vaccinationschedule.databinding.ActivityRegisterBinding
 import com.example.vaccinationschedule.viewModel.RegisterViewModel
 
 class RegisterActivity : AppCompatActivity(),registerNavigator {
+    override fun onEmaileCorrect() {
+        binding.signInUserEmailEditeText.isErrorEnabled = false
+    }
+
+    override fun onEmaileWrong() {
+        binding.signInUserEmailEditeText.setError(getString(R.string.emailErrorMessage))
+    }
+///////////////////////////////////////////////////////////////////////////////////////////
+    override fun onPasswordCorrect() {
+        binding.signInPasswordEditeText.isErrorEnabled = false
+    }
+
+    override fun onPasswordWrong() {
+        binding.signInPasswordEditeText.setError(getString(R.string.emailErrorMessage))
+    }
+/////////////////////////////////////////////////////////////////
+    override fun onNameCorrect() {
+        binding.signUpNameEditeText.isErrorEnabled = false
+    }
+
+    override fun onNameWrong() {
+        binding.signUpNameEditeText.setError(getString(R.string.emailErrorMessage))
+    }
+/////////////////////////////////////////////////////////////
+    override fun onPhoneCorrect() {
+        binding.phoneEditeText.isErrorEnabled = false
+    }
+
+    override fun onPhoneWrong() {
+        binding.phoneEditeText.setError(getString(R.string.emailErrorMessage))
+    }
+/////////////////////////////////////////////////////////////////////
+    override fun onStreetCorrect() {
+        binding.streetEditeText.isErrorEnabled = false
+    }
+
+    override fun onStreetWrong() {
+        binding.streetEditeText.setError(getString(R.string.emailErrorMessage))
+    }
+/////////////////////////////////////////////////////////////
+    override fun onIDCorrect() {
+        binding.idNumberEditeText.isErrorEnabled = false
+    }
+
+    override fun onIDWrong() {
+        binding.idNumberEditeText.setError(getString(R.string.emailErrorMessage))
+    }
+///////////////////////////////////////////////////////////
+    override fun onSurnameCorrect() {
+        binding.surNameEditeText.isErrorEnabled = false
+    }
+
+    override fun onSurnameWrong() {
+        binding.surNameEditeText.setError(getString(R.string.emailErrorMessage))
+    }
+
+    override fun onCityCorrect() {
+        binding.cityEditeText.isErrorEnabled = false
+    }
+
+    override fun onCityWrong() {
+        binding.cityEditeText.setError(getString(R.string.emailErrorMessage))
+    }
+
     override fun openLoginActivity() {
         var int = Intent(this, LoginActivity::class.java)
         startActivity(int)

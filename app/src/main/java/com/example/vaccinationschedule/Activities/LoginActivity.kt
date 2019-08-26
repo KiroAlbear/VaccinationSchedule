@@ -7,8 +7,9 @@ import androidx.databinding.DataBindingUtil
 import com.example.vaccinationschedule.Navigators.loginNavigator
 import com.example.vaccinationschedule.R
 import com.example.vaccinationschedule.databinding.ActivityLoginBinding
-import com.example.vaccinationschedule.recycleView.childAdapter
 import com.example.vaccinationschedule.viewModel.LoginViewModel
+import java.util.*
+
 
 class LoginActivity : AppCompatActivity(),loginNavigator {
     lateinit var binding: ActivityLoginBinding
@@ -30,7 +31,19 @@ class LoginActivity : AppCompatActivity(),loginNavigator {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_login)
         viewModel = LoginViewModel(this, this)
         binding.loginVM = viewModel
+        setLocale("Arabic")
 
+    }
 
+    fun setLocale(lang: String) {
+
+        var myLocale = Locale(lang)
+        val res = resources
+        val dm = res.displayMetrics
+        val conf = res.configuration
+        conf.locale = myLocale
+        res.updateConfiguration(conf, dm)
+        val refresh = Intent(this, LoginActivity::class.java)
+        startActivity(refresh)
     }
 }

@@ -16,7 +16,7 @@ class mJSON {
 
     fun getEmailEntity(email: String) {
         var url = "http://hackathonv1.azurewebsites.net/home/test2?email=" + email
-        myAsyncTask().execute()
+        myAsyncTask().execute(url)
     }
 
     inner class myAsyncTask : AsyncTask<String, String, String>() {

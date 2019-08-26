@@ -2,10 +2,17 @@ package com.example.vaccinationschedule
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.example.powerofwords2.Navigators.FireBaseNavigator
 import com.example.vaccinationschedule.FireBaseFunctions.FireBaseFunctions
 import com.example.vaccinationschedule.Model.ChildEntity
 import com.example.vaccinationschedule.Model.CurrentUserEntity
+import com.example.vaccinationschedule.retrofitInterface.RetrofitClient
+import com.example.vaccinationschedule.retrofitInterface.userInterface
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.create
 
 class MainActivity : AppCompatActivity(),FireBaseNavigator {
     override fun onSuccessAdingUserData(email: String) {
@@ -59,7 +66,24 @@ class MainActivity : AppCompatActivity(),FireBaseNavigator {
 //        fire.addUser(CurrentUserEntity("kirolos@gmail.com","kirolos",
 //                                     "com","xs","english","gmail"),childList)
 
-        fire.getChildrenByEmail("kirolos@gmail.com")
+        //fire.getChildrenByEmail("kirolos@gmail.com")
+
+
+
+        RetrofitClient.getInstance().create<userInterface>().addParent("kiro","kiro","kiro",
+            "kiro","kiro","kiro","kiro").enqueue(object :
+            Callback<String> {
+            override fun onFailure(call: Call<String>, t: Throwable) {
+
+            }
+
+            override fun onResponse(call: Call<String>, response: Response<String>) {
+                var asd = response.body()
+            }
+
+        })
+
+
 
 
        // fire.getUsreByProperty()
