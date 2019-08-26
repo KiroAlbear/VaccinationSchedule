@@ -1,17 +1,9 @@
 package com.example.vaccinationschedule
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
 import com.example.powerofwords2.Navigators.FireBaseNavigator
-import com.example.vaccinationschedule.FireBaseFunctions.FireBaseFunctions
-import com.example.vaccinationschedule.Model.ChildEntity
 import com.example.vaccinationschedule.Model.CurrentUserEntity
 
-class MainActivity : AppCompatActivity(),FireBaseNavigator {
-    override fun onSuccessAdingUserData(email: String) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
+open class viewModelHelper:FireBaseNavigator {
     override fun onFailedAdingUserData() {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
@@ -44,24 +36,7 @@ class MainActivity : AppCompatActivity(),FireBaseNavigator {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        var childList:ArrayList<ChildEntity> = arrayListOf()
-
-        childList.add(ChildEntity("kevin","kirolos","20-9-1990"))
-        childList.add(ChildEntity("agnes","kirolos","20-9-1990"))
-        childList.add(ChildEntity("helana","kirolos","20-9-1990"))
-
-        val fire: FireBaseFunctions = FireBaseFunctions(this,this)
-
-
-//        fire.addUser(CurrentUserEntity("kirolos@gmail.com","kirolos",
-//                                     "com","xs","english","gmail"),childList)
-
-        fire.getChildrenByEmail("kirolos@gmail.com")
-
-
-       // fire.getUsreByProperty()
+    override fun onSuccessAdingUserData(email: String) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 }

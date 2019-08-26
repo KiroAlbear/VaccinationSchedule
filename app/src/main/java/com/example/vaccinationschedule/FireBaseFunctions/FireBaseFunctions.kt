@@ -1,10 +1,9 @@
-package com.example.powerofwords2.BasicFunctions
+package com.example.vaccinationschedule.FireBaseFunctions
 
-import android.app.Activity
 import android.content.Context
 import android.util.Log
 import com.example.powerofwords2.Navigators.FireBaseNavigator
-import com.example.vaccinationschedule.FireBaseFunctions.fireBaseStrings
+import com.example.vaccinationschedule.Model.ChildEntity
 import com.example.vaccinationschedule.Model.CurrentUserEntity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
@@ -31,19 +30,40 @@ class FireBaseFunctions(fireBaseNavigator: FireBaseNavigator, context: Context) 
         this.context = context
     }
 
-    private fun addUser(currentUser: CurrentUserEntity) {
+    fun addUser(currentUser: CurrentUserEntity, userChilds: ArrayList<ChildEntity>) {
         val fireBaseUser = hashMapOf(
-            fireBaseStrings.full_email to currentUser.full_email,
-            fireBaseStrings.e_username to currentUser.e_username,
-            fireBaseStrings.e_domain to currentUser.e_domain,
-            fireBaseStrings.e_tld to currentUser.e_tld,
-            fireBaseStrings.e_punycode to currentUser.e_punycode
+            globalStrings.full_email to currentUser.full_email,
+            globalStrings.e_username to currentUser.e_username,
+            globalStrings.e_domain to currentUser.e_domain,
+            globalStrings.e_tld to currentUser.e_tld,
+            globalStrings.e_punycode to currentUser.e_punycode,
+            globalStrings.e_language to currentUser.e_language
+
         )
 
         val db = FirebaseFirestore.getInstance()
-        db.collection("users").document(currentUser.full_email).set(fireBaseUser)
+        db.collection(globalStrings.COLLECTION_NAME).document(currentUser.full_email).set(fireBaseUser)
             .addOnSuccessListener { documentReference ->
                 fireBaseNavigator.onSuccessAdingUserData(currentUser.full_email)
+                //  Log.d("adding currentUser", documentReference.toString())
+
+            }.addOnFailureListener { ex ->
+                fireBaseNavigator.onFailedAdingUserData()
+            }
+
+
+        for (i in userChilds) {
+            addUserChild(currentUser.full_email, ChildEntity(i.child_name, i.child_surname, i.date_of_birth))
+        }
+    }
+
+    private fun addUserChild(userEmail: String, userChildEntity: ChildEntity) {
+        val db = FirebaseFirestore.getInstance()
+        db.collection(globalStrings.COLLECTION_NAME).document(userEmail)
+            .collection(globalStrings.CHILDS_NAME)
+            .document().set(userChildEntity)
+            .addOnSuccessListener { documentReference ->
+
                 //  Log.d("adding currentUser", documentReference.toString())
 
             }.addOnFailureListener { ex ->
@@ -53,9 +73,9 @@ class FireBaseFunctions(fireBaseNavigator: FireBaseNavigator, context: Context) 
     }
 
 
-    fun getUsreByProperty( propertyName:String, value:String){
+    fun getUsreByProperty(propertyName: String, value: String) {
         val db = FirebaseFirestore.getInstance()
-        db.collection(fireBaseStrings.COLLECTION_NAME).whereEqualTo(propertyName, value)
+        db.collection(globalStrings.COLLECTION_NAME).whereEqualTo(propertyName, value)
             .get()
             .addOnSuccessListener { result ->
                 for (document in result) {
@@ -190,34 +210,45 @@ class FireBaseFunctions(fireBaseNavigator: FireBaseNavigator, context: Context) 
 
 
     fun getUserByEmail(userEmail: String) {
-        fireStore.collection("users").document(userEmail).get().addOnSuccessListener { documents ->
 
-            //            for (document in documents) {
-//                    currentUser = CurrentUserEntity(
-//                        document.get(IntentKeys.USER_FIRESTORE_NAME_KEY) as String,
-//                        document.get(IntentKeys.USER_FIRESTORE_EMAIL_KEY) as String,
-//                        document.get(IntentKeys.USER_FIRESTORE_LEARNEDWORDS_KEY) as ArrayList<String>,
-//                        document.get(IntentKeys.USER_FIRESTORE_EMAILTYPE_KEY) as String
-//                    )
-//
-//                }
-            val currentUser = CurrentUserEntity(
-                documents.get(fireBaseStrings.full_email) as String,
-                documents.get(fireBaseStrings.e_username) as String,
-                documents.get(fireBaseStrings.e_tld) as String,
-                documents.get(fireBaseStrings.e_punycode) as String,
-                documents.get(fireBaseStrings.e_language) as String,
-                documents.get(fireBaseStrings.e_domain) as String
-            )
-            fireBaseNavigator.onGettingUserByEmail(currentUser)
-        }.addOnFailureListener { exception ->
-            fireBaseNavigator.onUserNotFound()
-        }
+        //get user himeself
+        fireStore.collection(globalStrings.COLLECTION_NAME).document(userEmail).get()
+            .addOnSuccessListener { documents ->
+                val currentUser = CurrentUserEntity(
+                    documents.get(globalStrings.full_email) as String,
+                    documents.get(globalStrings.e_username) as String,
+                    documents.get(globalStrings.e_tld) as String,
+                    documents.get(globalStrings.e_punycode) as String,
+                    documents.get(globalStrings.e_language) as String,
+                    documents.get(globalStrings.e_domain) as String
+                )
+                fireBaseNavigator.onGettingUserByEmail(currentUser)
+            }.addOnFailureListener { exception ->
+                fireBaseNavigator.onUserNotFound()
+            }
+
     }
 
-    fun insertUser(user: CurrentUserEntity) {
-        addUser(user)
+
+
+    fun getChildrenByEmail(userEmail: String) {
+        fireStore.collection(globalStrings.COLLECTION_NAME).document(userEmail)
+            .collection(globalStrings.CHILDS_NAME).get().addOnSuccessListener { documents ->
+
+                for (document in documents) {
+                    val child = ChildEntity(
+                        document.get(globalStrings.child_name) as String,
+                        document.get(globalStrings.child_surname) as String,
+                        document.get(globalStrings.child_date_of_birth) as String
+                    )
+                    print(child)
+                }
+                // fireBaseNavigator.onGettingUserByEmail(currentUser)
+            }.addOnFailureListener { exception ->
+                fireBaseNavigator.onUserNotFound()
+            }
     }
+
 
     fun checkUserExistance(user: CurrentUserEntity) {
         fireStore.collection("users").document(user.full_email)

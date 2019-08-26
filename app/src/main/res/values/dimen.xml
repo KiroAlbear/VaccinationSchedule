@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="dimenHeightEditeText">75dp</dimen>
+    <dimen name="dimenMarginLeftEditeText">30dp</dimen>
+    <dimen name="dimenMarginRightEditeText">30dp</dimen>
+    <dimen name="dimenMarginTopEditeText">10dp</dimen>
+    <dimen name="dimenWidthEditeText">0dp</dimen>
+    <dimen name="dimenloginTextView">30sp</dimen>
+    <!--<dimen name="dimenWordCompletionTextSize">18.0</dimen>-->
+    <item name="dimenWordCompletionTextSize" type="dimen" format="float">18.0</item>
+    <dimen name="settingIconWidth">30dp</dimen>
+    <dimen name="settingIconHeight">30dp</dimen>
+    <dimen name="settingImageAndRadioMarginTop">10dp</dimen>
+    <dimen name="registerEditeTextMarginStart">20dp</dimen>
+    <dimen name="registerIconWidth">30dp</dimen>
+    <dimen name="registerIconHeight">30dp</dimen>
+</resources>

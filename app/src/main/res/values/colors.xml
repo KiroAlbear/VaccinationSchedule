@@ -3,4 +3,31 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="colorLoginLayoutBackground">#75000000</color>
+    <color name="colorRegisterationTextView">#888888</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorPanelEditeText">#81FFFFFF</color>
+    <color name="colorEditeTextFont">#FFFFFF</color>
+    <color name="colorSecondaryEditeText">#94FFFFFF</color>
+    <color name="colorPrimaryEditeText">#17AFFF</color>
+    <color name="colorRegisterationButtonBackground">#1290FF</color>
+    <color name="colorRegisterationButtonText">#ffffff</color>
+    <color name="colorRoundGreenButtonDisabled">#7E7E7E</color>
+    <color name="colorRoundGreenButtonEnabled">#99CC00</color>
+    <color name="colorLearnSpeakerColor">#1F60FF</color>
+    <color name="colorNavigationSettings">#00FF5C</color>
+    <color name="colorNavigationHeart">#FF1846</color>
+    <color name="colorNavigationHome">#A81274FF</color>
+    <color name="colorNavigationActivity">#D34E4E4E</color>
+    <color name="colorTranslationButton">#FFDF40</color>
+    <color name="colorTranslationDialogBackground">#81FFFFFF</color>
+    <color name="blue_grey_bg_light">#57FFFFFF</color>
+    <color name="red_bg_light">#ffebee</color>
+    <color name="colorRed">#C92727</color>
+    <color name="colorBlack">#BC000000</color>
+    <color name="loadingLayoutColor">#A9494949</color>
+    <color name= "favouriteButtonColor">#65FFFFFF</color>
+    <color name="colorTransparent">#00FFFFFF</color>
+    <color name="colorAppTheme">#9E8BF3</color>
+
 </resources>

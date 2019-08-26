@@ -8,4 +8,124 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+
+
+    <style name="RegisterTheme" parent="@style/Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAppTheme</item>
+    </style>
+
+    <style name="generalnotitle" parent="AppTheme">
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="translationTextStyle" parent="android:Theme">
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">50dp</item>
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:background">@color/colorTranslationButton</item>
+    </style>
+
+
+    <style name="registerationTextView" parent="android:Theme">
+        <item name="android:textColor">@color/colorRegisterationTextView</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="registerImageViewStyle" parent="AppTheme">
+        <item name="android:layout_width">@dimen/registerIconWidth</item>
+        <item name="android:layout_height">@dimen/registerIconHeight</item>
+    </style>
+
+    <style name="settingTextViewStyle" parent="android:Widget.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+
+    <style name="settingSeekBarStyle" parent="android:Widget.Material.SeekBar">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginStart">10dp</item>
+        <item name="android:layout_marginEnd">10dp</item>
+    </style>
+
+    <style name="settingIconsStyle">
+        <item name="android:layout_width">@dimen/settingIconWidth</item>
+        <item name="android:layout_height">@dimen/settingIconHeight</item>
+        <item name="android:layout_marginStart">5dp</item>
+    </style>
+
+    <style name="recycleViewItemLayout">
+        <item name="android:layout_height">80dp</item>
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
+    <style name="recycleViewItemTextView" parent="android:Widget.TextView">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:textSize">23sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginStart">20dp</item>
+        <item name="android:layout_marginEnd">8dp</item>
+    </style>
+
+
+    <style name="extendedEditeTextStyle" parent="android:Theme">
+
+        <item name="android:textSize">18sp</item>
+        <item name="android:inputType">textVisiblePassword</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:backgroundTint">@color/colorAppTheme</item>
+        <item name="android:textColorHint">@color/colorAppTheme</item>
+        <item name="android:drawablePadding">@dimen/registerEditeTextMarginStart</item>
+
+    </style>
+
+    <style name="textInputLayoutStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">@dimen/dimenHeightEditeText</item>
+        <item name="android:textColorHint">@color/colorAppTheme</item>
+
+    </style>
+
+
+
+
+    <style name="registerationTextViewStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">@dimen/dimenloginTextView</item>
+        <item name="android:textColor">@color/colorRegisterationTextView</item>
+    </style>
+
+    <style name="loginRegisterHeaderStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:textSize">@dimen/dimenloginTextView</item>
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:layout_marginStart">-12dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="registerationButtonStyle" parent="Widget.MaterialComponents.Button">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:textColor">@color/colorRegisterationButtonText</item>
+        <item name="android:layout_marginTop">10dp</item>
+
+
+
+    </style>
 </resources>
