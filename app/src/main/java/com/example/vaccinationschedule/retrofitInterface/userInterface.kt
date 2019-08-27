@@ -49,7 +49,7 @@ interface userInterface {
     fun getAllChilds(
         @Query("p_id") p_id: String,
         @Query("fbclid") fbclid: String
-    ): Call<AllChildsResponse>
+    ): Call<ArrayList<AllChildsResponse>>
 
 
 }

@@ -45,7 +45,7 @@ class RegisterActivity : AppCompatActivity(), registerNavigator {
     }
 
     override fun onPasswordWrong() {
-        binding.signInPasswordEditeText.setError(getString(R.string.emailErrorMessage))
+        binding.signInPasswordEditeText.setError("Password is not valid")
     }
 
     /////////////////////////////////////////////////////////////////

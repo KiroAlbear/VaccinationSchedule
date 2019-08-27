@@ -16,6 +16,7 @@ import android.R
 import android.annotation.SuppressLint
 import com.example.vaccinationschedule.BasicFunctions.globalStrings
 import com.example.vaccinationschedule.ResponseEntity.AllChildsResponse
+import com.example.vaccinationschedule.ResponseEntity.ChildResponseEntity
 import com.example.vaccinationschedule.ResponseEntity.SignInResponse
 import com.example.vaccinationschedule.retrofitInterface.RetrofitClient
 import com.example.vaccinationschedule.retrofitInterface.userInterface
@@ -41,7 +42,6 @@ class HomeActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, com.example.vaccinationschedule.R.layout.activity_home)
 
 
-
 //        childList.add(ChildEntity("kirolos", "albear", "12-9-2019"))
 //        childList.add(ChildEntity("sa3eed", "albear", "13-9-2019"))
 //        childList.add(ChildEntity("heba", "albear", "14-9-2019"))
@@ -56,19 +56,29 @@ class HomeActivity : AppCompatActivity() {
 
     }
 
-    private fun getAllChilds(){
-        RetrofitClient.getInstance().create<userInterface>().getAllChilds(globalStrings.Parent_ID,globalStrings.apiKey).enqueue(object :
-            Callback<AllChildsResponse> {
-            override fun onResponse(call: Call<AllChildsResponse>, response: Response<AllChildsResponse>) {
+    private fun getAllChilds() {
+        RetrofitClient.getInstance().create<userInterface>().getAllChilds(globalStrings.Parent_ID, globalStrings.apiKey)
+            .enqueue(object :
+                Callback<ArrayList<AllChildsResponse>> {
+                override fun onFailure(call: Call<ArrayList<AllChildsResponse>>, t: Throwable) {
 
-            }
+                }
 
-            override fun onFailure(call: Call<AllChildsResponse>, t: Throwable) {
+                override fun onResponse(
+                    call: Call<ArrayList<AllChildsResponse>>,
+                    response: Response<ArrayList<AllChildsResponse>>
+                ) {
+                    if ((response.body() as ArrayList<*>).count() > 0) {
+                        for (i in (response.body() as ArrayList<AllChildsResponse>)) {
+                            childList.add(ChildEntity(i.name,globalStrings.Parent_Name,i.date))
+                        }
+                        adapter = childAdapter(HomeActivity.binding.root.context, childList)
+                        binding.shimmerRecyclerView.adapter = adapter
+                    }
+                }
 
-            }
 
-
-        })
+            })
     }
 
 }

@@ -68,6 +68,7 @@ class LoginViewModel(navigator: loginNavigator, context: Context) : viewModelHel
 
             override fun onResponse(call: Call<SignInResponse>, response: Response<SignInResponse>) {
                 globalStrings.Parent_ID = response.body()!!.ParentId
+                globalStrings.Parent_Name = response.body()!!.LastName
                 navigator.openHomeActivity()
             }
 

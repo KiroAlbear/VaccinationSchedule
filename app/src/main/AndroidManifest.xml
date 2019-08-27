@@ -27,11 +27,11 @@
                 android:theme="@style/AppTheme.CustomTheme">
         </activity>
 
-        <activity android:name=".Activities.LoginActivity"
+        <activity android:name=".Activities.RegisterActivity"
                   android:theme="@style/RegisterTheme">
         </activity>
         <activity
-                android:name=".Activities.RegisterActivity"
+                android:name=".Activities.LoginActivity"
                 android:theme="@style/RegisterTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>

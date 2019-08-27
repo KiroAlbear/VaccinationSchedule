@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout
         xmlns:tools="http://schemas.android.com/tools" xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto">
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:context=".Activities.RegisterActivity">
     <data>
         <variable name="registerVm" type="com.example.vaccinationschedule.viewModel.RegisterViewModel"/>
     </data>
@@ -179,13 +180,12 @@
 
             <TextView
                     android:layout_width="wrap_content"
-                      android:layout_height="wrap_content"
-                      app:layout_constraintTop_toBottomOf="@id/phoneEditeText"
-                      android:text="@string/signUpHaveAccountText"
-                      style="@style/registerationTextView"
-                      app:layout_constraintStart_toStartOf="@+id/registerLeftMarginGuideline"
-                      android:layout_marginStart="70dp"
-                      android:id="@+id/registerHaveAccountTextView"/>
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/phoneEditeText"
+                    android:text="@string/signUpHaveAccountText"
+                    style="@style/registerationTextView"
+                    app:layout_constraintEnd_toEndOf="@id/registerMiddleGuideline"
+                    android:id="@+id/registerHaveAccountTextView"/>
 
 
             <TextView android:layout_width="wrap_content"
@@ -195,9 +195,9 @@
                       android:onClick="@{() ->  registerVm.onSignInClick()}"
                       style="@style/registerationTextView"
                       android:textColor="@color/colorAppTheme"
-                      android:layout_marginStart="8dp"
-
-                      app:layout_constraintStart_toEndOf="@+id/registerHaveAccountTextView"/>
+                      android:layout_marginStart="5dp"
+                      android:layout_marginBottom="5dp"
+                      app:layout_constraintStart_toEndOf="@+id/registerMiddleGuideline"/>
 
             <androidx.constraintlayout.widget.Guideline
                     android:id="@+id/registerLeftMarginGuideline"
@@ -212,6 +212,14 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     app:layout_constraintGuide_percent="0.92"/>
+
+
+            <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/registerMiddleGuideline"
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5"/>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

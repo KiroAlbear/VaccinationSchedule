@@ -28,26 +28,26 @@ class AddChildrenPopUp: Activity(), addChildrenNavigator {
     }
 
     override fun onNameCorrect() {
-        binding.searchName.isErrorEnabled = false
+        binding.searchNameEditeText.isErrorEnabled = false
     }
 
     override fun onNameWrong() {
-        binding.searchSurName.setError("")
+        binding.searchNameEditeText.setError("Name should be only characters")
     }
 
     override fun onSurnameCorrect() {
-        binding.searchSurName.isErrorEnabled = false
+        binding.searchSurNameEditeText.isErrorEnabled = false
     }
 
     override fun onSurnameWrong() {
-        binding.searchSurName.setError("")
+        binding.searchSurNameEditeText.setError("Surname should be only characters")
     }
 
     override fun onDateCorrect() {
-        binding.SearchBirthDate.isErrorEnabled = false
+        binding.searchBirthDateEditeText.isErrorEnabled = false
     }
 
     override fun onDateWrong() {
-        binding.searchSurName.setError("")
+        binding.searchBirthDateEditeText.setError("Birth date is not in correct format")
     }
 }
