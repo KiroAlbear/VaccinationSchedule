@@ -22,6 +22,10 @@
     <string name="streetText">الشارع</string>
     <string name="cityText">المدينة</string>
     <string name="phoneText">الهاتف</string>
+    <string name="searchBirthDateText">dd/mm/yyyy</string>
+    <string name="searchText">بحث</string>
+    <string name="addText">اضافة</string>
+    <string name="searchAddChidrenText">اضافة مولود</string>
 
 
     <string name="signInOrText">او</string>

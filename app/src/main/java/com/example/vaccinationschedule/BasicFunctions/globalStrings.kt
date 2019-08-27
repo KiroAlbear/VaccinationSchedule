@@ -1,5 +1,7 @@
 package com.example.vaccinationschedule.BasicFunctions
 
+import com.example.vaccinationschedule.Model.ChildEntity
+
 class globalStrings {
     companion object {
         val e_domain = "e_domain"
@@ -21,9 +23,12 @@ class globalStrings {
         val email_DomainName = "DomainName"
         val email_TLD = "TLD"
 
+        var Parent_ID = ""
+        var apiKey = "IwAR0IUhctybQeSp_HXPReJf_c9olPr31igJqHh6DhNwJTv8PyXK20OFDRH6w"
         val signinErrorMessage = "user does not exist"
         val signupErrorMessage = "User Exist"
 
+        var childList: MutableList<ChildEntity> = mutableListOf()
     }
 
 }

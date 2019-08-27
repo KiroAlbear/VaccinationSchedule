@@ -2,6 +2,7 @@ package com.example.vaccinationschedule.viewModel
 
 import android.content.Context
 import com.example.vaccinationschedule.BasicFunctions.UserHelper
+import com.example.vaccinationschedule.BasicFunctions.globalStrings
 import com.example.vaccinationschedule.FireBaseFunctions.FireBaseFunctions
 import com.example.vaccinationschedule.Navigators.loginNavigator
 import com.example.vaccinationschedule.ResponseEntity.SignInResponse
@@ -18,7 +19,6 @@ class LoginViewModel(navigator: loginNavigator, context: Context) : viewModelHel
     var loginPassword: String = ""
     var navigator = navigator
     private var userHelper: UserHelper = UserHelper()
-    private var fireBaseFunctions = FireBaseFunctions(this, context)
     fun onSignInClick() {
         loginEmail = loginEmail.trim()
 
@@ -37,7 +37,7 @@ class LoginViewModel(navigator: loginNavigator, context: Context) : viewModelHel
             navigator.onPasswordCorrect()
 ///////////////////////////////////////////////////////////
 
-        if (validateEmail && validatePassword)
+       // if (validateEmail && validatePassword)
         SignIn()
     }
 
@@ -54,11 +54,11 @@ class LoginViewModel(navigator: loginNavigator, context: Context) : viewModelHel
     }
 
     private fun SignIn() {
-//        loginPassword = "kiro123"
-//        loginEmail = "kirolosa4@gmail.com"
-        var apiKey = "IwAR0IUhctybQeSp_HXPReJf_c9olPr31igJqHh6DhNwJTv8PyXK20OFDRH6w"
+        loginPassword = "kiro12345"
+        loginEmail = "kirolosa12@gmail.com"
+
         RetrofitClient.getInstance().create<userInterface>().signIn(
-            loginEmail, loginPassword, apiKey
+            loginEmail, loginPassword, globalStrings.apiKey
 
         ).enqueue(object :
             Callback<SignInResponse> {
@@ -67,6 +67,7 @@ class LoginViewModel(navigator: loginNavigator, context: Context) : viewModelHel
             }
 
             override fun onResponse(call: Call<SignInResponse>, response: Response<SignInResponse>) {
+                globalStrings.Parent_ID = response.body()!!.ParentId
                 navigator.openHomeActivity()
             }
 

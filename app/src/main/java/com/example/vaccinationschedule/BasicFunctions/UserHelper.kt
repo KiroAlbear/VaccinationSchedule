@@ -26,4 +26,9 @@ open class UserHelper {
         var reg = Regex("^(?=.*[0-9])(?=.*[a-z]).{8,}\$")
         return reg.matches(password)
     }
+
+    fun validateBirthDate(birthDate:String):Boolean{
+        var reg = Regex("^\\d{1,2}\\/\\d{1,2}\\/\\d{4}\$")
+        return reg.matches(birthDate)
+    }
 }

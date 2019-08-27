@@ -18,9 +18,15 @@
                 android:theme="@style/RegisterTheme">
         </activity>
         <activity
-                android:name=".PopUps.pop"
-                android:theme="@style/RegisterTheme">
+                android:name=".PopUps.SearchPopUp"
+                android:theme="@style/AppTheme.CustomTheme">
         </activity>
+
+        <activity
+                android:name=".PopUps.AddChildrenPopUp"
+                android:theme="@style/AppTheme.CustomTheme">
+        </activity>
+
         <activity android:name=".Activities.LoginActivity"
                   android:theme="@style/RegisterTheme">
         </activity>

@@ -124,8 +124,10 @@
         <item name="android:layout_width">0dp</item>
         <item name="android:textColor">@color/colorRegisterationButtonText</item>
         <item name="android:layout_marginTop">10dp</item>
+    </style>
 
-
-
+    <style name="AppTheme.CustomTheme" parent="RegisterTheme">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowCloseOnTouchOutside">true</item>
     </style>
 </resources>

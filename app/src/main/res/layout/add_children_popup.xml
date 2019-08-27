@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android">
+    
+<data>
+    <variable name="addChildrenVM" type="com.example.vaccinationschedule.viewModel.AddChildrenViewModel"/>
+</data>
+
+<LinearLayout 
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <TextView
+            android:paddingLeft="15dp"
+            android:paddingTop="10dp"
+            android:layout_width="wrap_content"
+            android:id="@+id/addChildTextView"
+            style="@style/loginRegisterHeaderStyle"
+            android:text="@string/searchAddChidrenText"
+            android:layout_margin="10dp"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/searchName"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            style="@style/textInputLayoutStyle"
+            android:hint="@string/nameTexr"
+            android:layout_marginBottom="10dp">
+        <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@={addChildrenVM.name}"
+                style="@style/extendedEditeTextStyle"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/searchSurName"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            style="@style/textInputLayoutStyle"
+            android:hint="@string/surNameText"
+            android:layout_marginBottom="10dp">
+        <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@={addChildrenVM.surname}"
+                style="@style/extendedEditeTextStyle"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/SearchBirthDate"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            style="@style/textInputLayoutStyle"
+            android:hint="@string/searchBirthDateText"
+            android:layout_marginBottom="10dp">
+        <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@={addChildrenVM.birthOfDate}"
+                style="@style/extendedEditeTextStyle"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+            android:layout_height="wrap_content"
+            android:layout_width="150dp"
+            android:layout_gravity="center"
+            style="@style/registerationButtonStyle"
+            android:text="@string/addText"
+            android:onClick="@{() -> addChildrenVM.onSearchClick()}"
+            android:textSize="16dp"/>
+
+</LinearLayout>
+
+</layout>

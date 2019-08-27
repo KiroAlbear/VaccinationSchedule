@@ -1,6 +1,7 @@
 package com.example.vaccinationschedule.retrofitInterface
 
 import com.example.vaccinationschedule.Model.CurrentUserEntity
+import com.example.vaccinationschedule.ResponseEntity.AllChildsResponse
 import com.example.vaccinationschedule.ResponseEntity.SignInResponse
 import retrofit2.Call
 import retrofit2.http.GET
@@ -34,4 +35,21 @@ interface userInterface {
         @Query("fbclid") apiKey: String
 
     ): Call<SignInResponse>
+
+    @GET("AddChild")
+    fun AddChild(
+        @Query("p_id") p_id: String,
+        @Query("Name") Name: String,
+        @Query("Date") Date: String,
+        @Query("fbclid") fbclid: String
+    ): Call<String>
+
+
+    @GET("GetChilds")
+    fun getAllChilds(
+        @Query("p_id") p_id: String,
+        @Query("fbclid") fbclid: String
+    ): Call<AllChildsResponse>
+
+
 }

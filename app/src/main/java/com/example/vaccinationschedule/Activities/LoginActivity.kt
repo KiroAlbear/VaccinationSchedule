@@ -42,11 +42,13 @@ class LoginActivity : AppCompatActivity(),loginNavigator {
     override fun openHomeActivity() {
         var int = Intent(this, HomeActivity::class.java)
         startActivity(int)
+        finish()
     }
 
     override fun openRegisterActivity() {
         var int = Intent(this, RegisterActivity::class.java)
         startActivity(int)
+        finish()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
