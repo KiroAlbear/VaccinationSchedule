@@ -61,7 +61,7 @@
                         style="@style/extendedEditeTextStyle"
                         android:hint="@string/surNameText"
                         android:text="@={registerVm.surname}"
-                        android:drawableStart="@drawable/ic_password_register">
+                        android:drawableStart="@drawable/ic_name_register">
                 </com.google.android.material.textfield.TextInputEditText>
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -175,6 +175,7 @@
                     app:layout_constraintEnd_toEndOf="@id/registerRightMarginGuideline"
                     app:layout_constraintStart_toStartOf="@id/registerLeftMarginGuideline"
                     android:layout_marginStart="8dp"
+                    android:layout_marginBottom="10dp"
                     android:onClick="@{()->registerVm.onSignUpClick()}"
                     android:layout_marginEnd="8dp"/>
 
@@ -184,6 +185,7 @@
                     app:layout_constraintTop_toBottomOf="@id/phoneEditeText"
                     android:text="@string/signUpHaveAccountText"
                     style="@style/registerationTextView"
+                    android:layout_marginBottom="10dp"
                     app:layout_constraintEnd_toEndOf="@id/registerMiddleGuideline"
                     android:id="@+id/registerHaveAccountTextView"/>
 
@@ -196,7 +198,7 @@
                       style="@style/registerationTextView"
                       android:textColor="@color/colorAppTheme"
                       android:layout_marginStart="5dp"
-                      android:layout_marginBottom="5dp"
+                      android:layout_marginBottom="10dp"
                       app:layout_constraintStart_toEndOf="@+id/registerMiddleGuideline"/>
 
             <androidx.constraintlayout.widget.Guideline

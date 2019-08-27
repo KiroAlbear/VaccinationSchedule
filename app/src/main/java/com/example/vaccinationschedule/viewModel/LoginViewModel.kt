@@ -22,21 +22,21 @@ class LoginViewModel(navigator: loginNavigator, context: Context) : viewModelHel
     fun onSignInClick() {
         loginEmail = loginEmail.trim()
 
-        val validatePassword = userHelper.validateUserPassword(loginPassword)
-        val validateEmail = userHelper.validateUserEmail(loginEmail)
-
-
-        if (!validateEmail)
-            navigator.onEmaileWrong()
-        else
-            navigator.onEmaileCorrect()
-////////////////////////////////////////
-        if (!validatePassword)
-            navigator.onPasswordWrong()
-        else
-            navigator.onPasswordCorrect()
+//        val validatePassword = userHelper.validateUserPassword(loginPassword)
+//        val validateEmail = userHelper.validateUserEmail(loginEmail)
+//
+//
+//        if (!validateEmail)
+//            navigator.onEmaileWrong()
+//        else
+//            navigator.onEmaileCorrect()
+//////////////////////////////////////////
+//        if (!validatePassword)
+//            navigator.onPasswordWrong()
+//        else
+//            navigator.onPasswordCorrect()
 ///////////////////////////////////////////////////////////
-        if (validateEmail && validatePassword)
+        //if (validateEmail && validatePassword)
         SignIn()
     }
 

@@ -17,11 +17,13 @@
 
     <string name="signUpHaveAccountText">Have an account?</string>
     <string name="signUpRegisterText">Sign in</string>
-    <string name="searchBirthDateText">dd/mm/yyyy</string>
+    <string name="searchBirthDateText">mm/dd/yyyy</string>
     <string name="searchText">Search</string>
     <string name="addText">Add</string>
     <string name="searchAddChidrenText">Add Child</string>
     <string name="logOutText">SignOut</string>
+    <string name="enterWordSearch">Enter your word </string>
+
 
     <string name="signInOrText">OR</string>
     <string name="surNameText">Surname</string>

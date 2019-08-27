@@ -38,64 +38,64 @@ class RegisterViewModel(navigator: registerNavigator, context: Context) : viewMo
     fun onSignUpClick() {
         //trime data
         trimData()
+//
+//        val validatePassword = userHelper.validateUserPassword(password)
+//        val validateEmail = userHelper.validateUserEmail(emailAddress)
+//        val validateName = true
+//        val validateSurname = true
+//
+//        val validateStreet = true
+//        val validateCity = true
+//        val validatePhone = userHelper.validatePhone(mobilePhone)
 
-        val validatePassword = userHelper.validateUserPassword(password)
-        val validateEmail = userHelper.validateUserEmail(emailAddress)
-        val validateName = userHelper.validateCharactersOnly(name)
-        val validateSurname = userHelper.validateCharactersOnly(surname)
-        val validateID = userHelper.validateID(idNumber)
-        val validateStreet = userHelper.validateCharactersOnly(Street)
-        val validateCity = userHelper.validateCharactersOnly(City)
-        val validatePhone = userHelper.validatePhone(mobilePhone)
-
-        if (!validateEmail)
-            navigator.onEmaileWrong()
-        else
-            navigator.onEmaileCorrect()
+//        if (!validateEmail)
+//            navigator.onEmaileWrong()
+//        else
+//            navigator.onEmaileCorrect()
 ////////////////////////////////////////
-        if (!validatePassword)
-            navigator.onPasswordWrong()
-        else
-            navigator.onPasswordCorrect()
+//        if (!validatePassword)
+//            navigator.onPasswordWrong()
+//        else
+//            navigator.onPasswordCorrect()
 ///////////////////////////////////////////////////////////
 
-        if (!validateName)
-            navigator.onNameWrong()
-        else
-            navigator.onNameCorrect()
+//        if (!validateName)
+//            navigator.onNameWrong()
+//        else
+//            navigator.onNameCorrect()
 
 /////////////////////////////////////////////////////////
-        if (!validateSurname)
-            navigator.onSurnameWrong()
-        else
-            navigator.onSurnameCorrect()
+//        if (!validateSurname)
+//            navigator.onSurnameWrong()
+//        else
+//            navigator.onSurnameCorrect()
 /////////////////////////////////////////////////////////
 
-        if (!validateID)
-            navigator.onIDWrong()
-        else
-            navigator.onIDCorrect()
+//        if (!validateID)
+//            navigator.onIDWrong()
+//        else
+//            navigator.onIDCorrect()
 //////////////////////////////////////////////////////////
 
-        if (!validateStreet)
-            navigator.onStreetWrong()
-        else
-            navigator.onStreetCorrect()
+//        if (!validateStreet)
+//            navigator.onStreetWrong()
+//        else
+//            navigator.onStreetCorrect()
 
 //////////////////////////////////////////////////////////
 
-        if (!validateCity)
-            navigator.onCityWrong()
-        else
-            navigator.onCityCorrect()
+//        if (!validateCity)
+//            navigator.onCityWrong()
+//        else
+//            navigator.onCityCorrect()
 ///////////////////////////////////////////////////////
-        if (!validatePhone)
-            navigator.onPhoneWrong()
-        else
-            navigator.onPhoneCorrect()
+//        if (!validatePhone)
+//            navigator.onPhoneWrong()
+//        else
+//            navigator.onPhoneCorrect()
 
-         if (validatePassword && validateEmail && validateName && validateSurname && validateID && validateStreet && validateCity && validatePhone)
-          signUpUser()
+         //if (validatePassword && validateEmail && validateName && validateSurname && validateStreet && validateCity && validatePhone)
+              signUpUser()
     }
 
     fun trimData() {
