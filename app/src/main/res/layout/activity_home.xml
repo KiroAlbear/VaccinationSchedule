@@ -6,7 +6,6 @@
         <variable name="homeVM" type="com.example.vaccinationschedule.viewModel.HomeViewModel"/>
     </data>
 
-
     <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -28,21 +27,30 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 android:src="@drawable/ic_add"/>
 
+
+        <com.google.android.material.button.MaterialButton
+                android:id="@+id/homeLogOutButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/logOutText"
+                app:layout_constraintStart_toEndOf="@id/homeSearchButton"
+                app:layout_constraintEnd_toStartOf="@id/homeAddButton"
+                android:layout_margin="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:src="@drawable/ic_add"/>
+
         <com.cooltechworks.views.shimmer.ShimmerRecyclerView
                 android:id="@+id/shimmer_recycler_view"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                app:shimmer_demo_child_count="10"
-                app:shimmer_demo_grid_child_count="1"
+                android:layout_height="match_parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:shimmer_demo_layout_manager_type="grid"
-                app:shimmer_demo_angle="20"/>
+                />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 
 </layout>

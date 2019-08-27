@@ -36,8 +36,7 @@ class LoginViewModel(navigator: loginNavigator, context: Context) : viewModelHel
         else
             navigator.onPasswordCorrect()
 ///////////////////////////////////////////////////////////
-
-       // if (validateEmail && validatePassword)
+        if (validateEmail && validatePassword)
         SignIn()
     }
 
@@ -54,9 +53,11 @@ class LoginViewModel(navigator: loginNavigator, context: Context) : viewModelHel
     }
 
     private fun SignIn() {
-        loginPassword = "kiro12345"
-        loginEmail = "kirolosa12@gmail.com"
-
+//        loginPassword = "kiro12345"
+//        loginEmail = "kirolosa12@gmail.com"
+       // loginEmail = "kirolos.albear15@gmail.com"
+        //loginEmail = "kirolos.albear13@gmail.com"
+       //loginEmail = "kirolos.albear21@gmail.com"
         RetrofitClient.getInstance().create<userInterface>().signIn(
             loginEmail, loginPassword, globalStrings.apiKey
 
@@ -67,9 +68,11 @@ class LoginViewModel(navigator: loginNavigator, context: Context) : viewModelHel
             }
 
             override fun onResponse(call: Call<SignInResponse>, response: Response<SignInResponse>) {
+                if(response.body()!=null){
                 globalStrings.Parent_ID = response.body()!!.ParentId
                 globalStrings.Parent_Name = response.body()!!.LastName
                 navigator.openHomeActivity()
+                }
             }
 
         })

@@ -26,6 +26,7 @@
     <string name="searchText">بحث</string>
     <string name="addText">اضافة</string>
     <string name="searchAddChidrenText">اضافة مولود</string>
+    <string name="logOutText">تسجيل الخروج</string>
 
 
     <string name="signInOrText">او</string>

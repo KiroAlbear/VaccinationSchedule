@@ -94,7 +94,7 @@ class RegisterViewModel(navigator: registerNavigator, context: Context) : viewMo
         else
             navigator.onPhoneCorrect()
 
-         //if (validatePassword && validateEmail && validateName && validateSurname && validateID && validateStreet && validateCity && validatePhone)
+         if (validatePassword && validateEmail && validateName && validateSurname && validateID && validateStreet && validateCity && validatePhone)
           signUpUser()
     }
 
@@ -117,14 +117,14 @@ class RegisterViewModel(navigator: registerNavigator, context: Context) : viewMo
     }
 
     fun signUpUser() {
-        name = "kirollos"
-        surname = "albear"
-        Street = "teraa st"
-        City = "shoubra"
-        mobilePhone = "01272911668"
-        idNumber = "1245567895456545"
-        password = "kiro123"
-        emailAddress = "kirolos.albear.fcis@gmail.com"
+//        name = "kirollos"
+//        surname = "albear"
+//        Street = "teraa st"
+//        City = "shoubra"
+//        mobilePhone = "01272911668"
+//        idNumber = "1245567895456545"
+//        password = "kiro12345"
+//        emailAddress = "kirolos.albear21@gmail.com"
         RetrofitClient.getInstance().create<userInterface>().addParent(
             name, surname, Street,
             City, mobilePhone, idNumber, emailAddress, password
@@ -136,7 +136,11 @@ class RegisterViewModel(navigator: registerNavigator, context: Context) : viewMo
 
             override fun onResponse(call: Call<String>, response: Response<String>) {
                 if (response.body() != globalStrings.signupErrorMessage)
+                {
+                    globalStrings.Parent_ID = response.body().toString()
                     navigator.openHomeActivity()
+                }
+
                 else
                     navigator.onUserAlreadyExist()
             }

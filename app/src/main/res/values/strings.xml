@@ -21,7 +21,7 @@
     <string name="searchText">Search</string>
     <string name="addText">Add</string>
     <string name="searchAddChidrenText">Add Child</string>
-
+    <string name="logOutText">SignOut</string>
 
     <string name="signInOrText">OR</string>
     <string name="surNameText">Surname</string>

@@ -11,4 +11,6 @@ interface addChildrenNavigator {
     fun onDateCorrect()
     fun onDateWrong()
 
+    fun closeThisActivity()
+
 }

@@ -1,6 +1,7 @@
 package com.example.vaccinationschedule.retrofitInterface
 
 import com.example.vaccinationschedule.Model.CurrentUserEntity
+import com.example.vaccinationschedule.Model.SearchEntity
 import com.example.vaccinationschedule.ResponseEntity.AllChildsResponse
 import com.example.vaccinationschedule.ResponseEntity.SignInResponse
 import retrofit2.Call
@@ -50,6 +51,12 @@ interface userInterface {
         @Query("p_id") p_id: String,
         @Query("fbclid") fbclid: String
     ): Call<ArrayList<AllChildsResponse>>
+
+
+    @GET("SearchEmail")
+    fun search(
+        @Query("domin") domin: String
+    ): Call<ArrayList<SearchEntity>>
 
 
 }

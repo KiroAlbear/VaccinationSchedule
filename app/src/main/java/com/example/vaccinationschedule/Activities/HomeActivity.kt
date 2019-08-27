@@ -42,10 +42,6 @@ class HomeActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, com.example.vaccinationschedule.R.layout.activity_home)
 
 
-//        childList.add(ChildEntity("kirolos", "albear", "12-9-2019"))
-//        childList.add(ChildEntity("sa3eed", "albear", "13-9-2019"))
-//        childList.add(ChildEntity("heba", "albear", "14-9-2019"))
-//        adapter = childAdapter(this, childList)
 
         getAllChilds()
         //binding.shimmerRecyclerView.adapter = adapter
@@ -54,6 +50,16 @@ class HomeActivity : AppCompatActivity() {
             startActivity(Intent(this@HomeActivity, AddChildrenPopUp::class.java))
         }
 
+        binding.homeSearchButton.setOnClickListener {
+            startActivity(Intent(this@HomeActivity, SearchPopUp::class.java))
+        }
+        binding.homeLogOutButton.setOnClickListener {
+            startActivity(Intent(this@HomeActivity, LoginActivity::class.java))
+            globalStrings.Parent_ID = ""
+            globalStrings.Parent_Name = ""
+            finish()
+
+        }
     }
 
     private fun getAllChilds() {
@@ -70,7 +76,7 @@ class HomeActivity : AppCompatActivity() {
                 ) {
                     if ((response.body() as ArrayList<*>).count() > 0) {
                         for (i in (response.body() as ArrayList<AllChildsResponse>)) {
-                            childList.add(ChildEntity(i.name,globalStrings.Parent_Name,i.date))
+                            childList.add(ChildEntity(i.name, globalStrings.Parent_Name, i.date))
                         }
                         adapter = childAdapter(HomeActivity.binding.root.context, childList)
                         binding.shimmerRecyclerView.adapter = adapter
@@ -79,6 +85,10 @@ class HomeActivity : AppCompatActivity() {
 
 
             })
+    }
+
+    private fun search() {
+
     }
 
 }

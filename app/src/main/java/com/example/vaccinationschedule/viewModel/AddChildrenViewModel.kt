@@ -30,7 +30,7 @@ class AddChildrenViewModel(private var navigator: addChildrenNavigator) {
         if (!validateName)
             navigator.onNameWrong()
         else
-            navigator.onNameWrong()
+            navigator.onNameCorrect()
 
         //////////////////////////////////////////
         if (!validateSurname)
@@ -43,23 +43,24 @@ class AddChildrenViewModel(private var navigator: addChildrenNavigator) {
         else
             navigator.onDateCorrect()
 
-        // if (validateName && validateSurname && validateBirthDate)
-        addChild()
+         if (validateName && validateSurname && validateBirthDate)
+             addChild()
+
 
 
     }
 
     fun addChild() {
-        name = "kiro"
-        surname = "albear"
-        birthOfDate = "8/27/2019"
+//        name = "kiro"
+//        surname = "albear"
+//        birthOfDate = "8/27/2019"
         RetrofitClient.getInstance().create<userInterface>().AddChild(
             globalStrings.Parent_ID, name, birthOfDate, globalStrings.apiKey
 
         ).enqueue(object :
             Callback<String> {
             override fun onFailure(call: Call<String>, t: Throwable) {
-
+                navigator.closeThisActivity()
             }
 
             override fun onResponse(call: Call<String>, response: Response<String>) {
@@ -68,7 +69,7 @@ class AddChildrenViewModel(private var navigator: addChildrenNavigator) {
                     HomeActivity.adapter = childAdapter(HomeActivity.binding.root.context, HomeActivity.childList)
                     HomeActivity.binding.shimmerRecyclerView.adapter = HomeActivity.adapter
                 }
-
+                navigator.closeThisActivity()
             }
 
         })

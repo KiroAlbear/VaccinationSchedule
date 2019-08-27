@@ -10,6 +10,9 @@ import com.example.vaccinationschedule.databinding.AddChildrenPopupBinding
 import com.example.vaccinationschedule.viewModel.AddChildrenViewModel
 
 class AddChildrenPopUp: Activity(), addChildrenNavigator {
+    override fun closeThisActivity() {
+        finish()
+    }
 
     lateinit var binding: AddChildrenPopupBinding
     lateinit var viewModel: AddChildrenViewModel
